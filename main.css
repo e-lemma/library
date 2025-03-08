@@ -76,3 +76,27 @@ header {
   background-color: var(--primary-dark);
   color: white;
 }
+
+.read::before {
+  content: "✓ ";
+}
+
+.currently-reading::before {
+  content: "⏳ ";
+}
+
+.not-read::before {
+  content: "✗ ";
+}
+
+.read {
+  color: #a5d6a7;
+}
+
+.currently-reading {
+  color: rgb(178, 131, 72);
+}
+
+.not-read {
+  color: rgb(239, 154, 154);
+}
