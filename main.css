@@ -48,6 +48,7 @@ header {
   border-collapse: collapse;
   border: 2px solid var(--primary-color);
   font-size: 17px;
+  letter-spacing: 0.2px;
 }
 
 .library-table th {
