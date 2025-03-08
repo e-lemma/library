@@ -66,6 +66,15 @@ function displayLibrary(library) {
   }
 }
 
+function setupAddBookButton() {
+  const button = document.querySelector(".add-book");
+  const dialog = document.querySelector(".add-book-dialog");
+
+  button.addEventListener("click", () => {
+    dialog.showModal();
+  });
+}
+
 addBookToLibrary(
   "The Hobbit",
   "J.R.R. Tolkien",
