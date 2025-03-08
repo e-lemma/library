@@ -28,17 +28,29 @@ body {
 /* HEADER */
 
 header {
+  display: flex;
   background-color: var(--primary-color);
   color: var(--text-color);
   padding: 15px;
   margin-bottom: 30px;
-  text-align: center;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.Title {
-  margin: 0;
+.title {
+  margin: 0 auto;
   font-size: 28px;
   letter-spacing: 1.5px;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+.add-book {
+  margin-left: auto;
+  background-color: var(--border-color);
+  color: var(--text-color);
+  padding: 2px 4px;
 }
 
 /* MAIN */
