@@ -36,6 +36,14 @@ function addStatusColor(statusCell, status) {
   }
 }
 
+function clearTable() {
+  const tbody = document.querySelector("table tbody");
+  if (tbody) {
+    tbody.innerHTML = "";
+    console.log("cleared table");
+  }
+}
+
 function displayLibrary(library) {
   /*
   loop through library
