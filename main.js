@@ -82,22 +82,77 @@ function setupAddBookButton() {
   });
 }
 
-addBookToLibrary(
-  "The Hobbit",
-  "J.R.R. Tolkien",
-  1937,
-  310,
-  "Not read",
-  myLibrary
-);
-addBookToLibrary("1984", "George Orwell", 1949, 328, "Read", myLibrary);
-addBookToLibrary(
-  "To Kill a Mockingbird",
-  "Harper Lee",
-  1960,
-  281,
-  "Currently Reading",
-  myLibrary
-);
+function setupFormButtons() {
+  const cancelButton = document.querySelector(".cancel-button");
+  const dialog = document.querySelector(".add-book-dialog");
+  const form = document.querySelector(".new-book-form");
 
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(form);
+    const bookData = {};
+    for (let [key, value] of formData.entries()) {
+      bookData[key] = value;
+    }
+
+    // add book to library
+    addBookToLibrary(bookData, myLibrary);
+
+    dialog.close();
+    displayLibrary(myLibrary);
+
+    form.reset();
+  });
+
+  cancelButton.addEventListener("click", () => {
+    dialog.close();
+    form.reset();
+  });
+}
+
+setupAddBookButton();
+setupFormButtons();
+
+// Sample books
+const sampleBooks = [
+  {
+    title: "To Kill a Mockingbird",
+    author: "Harper Lee",
+    year: 1960,
+    pages: 281,
+    status: "Read",
+  },
+  {
+    title: "1984",
+    author: "George Orwell",
+    year: 1949,
+    pages: 328,
+    status: "Currently Reading",
+  },
+  {
+    title: "The Great Gatsby",
+    author: "F. Scott Fitzgerald",
+    year: 1925,
+    pages: 180,
+    status: "Not read",
+  },
+  {
+    title: "Moby Dick",
+    author: "Herman Melville",
+    year: 1851,
+    pages: 635,
+    status: "Not read",
+  },
+  {
+    title: "Pride and Prejudice",
+    author: "Jane Austen",
+    year: 1813,
+    pages: 432,
+    status: "Read",
+  },
+];
+
+// Add sample books to library
+sampleBooks.forEach((book) => addBookToLibrary(book, myLibrary));
 displayLibrary(myLibrary);
