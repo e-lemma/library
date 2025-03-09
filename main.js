@@ -96,10 +96,10 @@ function setupFormButtons() {
       bookData[key] = value;
     }
 
-    // add book to library
     addBookToLibrary(bookData, myLibrary);
 
     dialog.close();
+
     displayLibrary(myLibrary);
 
     form.reset();
