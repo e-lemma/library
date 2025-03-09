@@ -45,16 +45,9 @@ function clearTable() {
 }
 
 function displayLibrary(library) {
-  /*
-  loop through library
-  for each book:
-    create a new table row
-    create 4 td elements with the book info
-    set the colour of the status depending on what it is
-      green for read, amber for currently reading, red for not read
-  */
+  const tableRef = document.querySelector("table tbody");
 
-  const tableRef = document.querySelector(".library-table");
+  clearTable();
 
   for (let book of library) {
     const newRow = tableRef.insertRow();
