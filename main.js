@@ -1,5 +1,3 @@
-const VALID_STATUSES = ["Not read", "Currently Reading", "Read"];
-
 const myLibrary = [];
 
 function generateID() {
