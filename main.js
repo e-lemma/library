@@ -15,8 +15,14 @@ function Book(title, author, year, pages, readStatus) {
   this.status = readStatus;
 }
 
-function addBookToLibrary(title, author, year, pages, status, library) {
-  const newBook = new Book(title, author, year, pages, status);
+function addBookToLibrary(bookData, library) {
+  const newBook = new Book(
+    bookData.title,
+    bookData.author,
+    bookData.year,
+    bookData.pages,
+    bookData.status
+  );
   library.push(newBook);
 }
 
