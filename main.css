@@ -112,3 +112,86 @@ header {
 .not-read {
   color: rgb(239, 154, 154);
 }
+
+/* DIALOG */
+
+.add-book-dialog {
+  background-color: var(--card-background);
+  color: var(--text-color);
+  border: 2px solid var(--border-color);
+  padding: 25px;
+  max-width: 450px;
+  box-shadow: 3px 3px 10px var(--border-color);
+}
+
+.add-book-dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.add-book-dialog h2 {
+  color: var(--primary-color);
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 24px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.add-book-dialog form {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 15px;
+  align-items: center;
+}
+
+.add-book-dialog label {
+  color: var(--text-muted);
+  font-size: 17px;
+  text-align: right;
+}
+
+.add-book-dialog input,
+.add-book-dialog select {
+  background-color: var(--background-dark);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  padding: 8px 12px;
+  font-family: inherit;
+  font-size: 16px;
+}
+
+.add-book-dialog input:focus,
+.add-book-dialog select:focus {
+  outline: 2px solid var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.dialog-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+  grid-column: 1 / -1;
+}
+
+.dialog-buttons button {
+  padding: 4px 8px;
+}
+
+.submit-button {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.submit-button:hover {
+  background-color: var(--primary-dark);
+}
+
+.cancel-button {
+  background-color: var(--border-color);
+  color: var(--text-color);
+}
+
+.cancel-button:hover {
+  background-color: #555555;
+}
