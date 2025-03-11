@@ -169,17 +169,17 @@ setupFormButtons();
 // Sample books
 const sampleBooks = [
   {
-    title: "To Kill a Mockingbird",
-    author: "Harper Lee",
-    year: 1960,
-    pages: 281,
+    title: "The Sound and the Fury",
+    author: "William Faulkner",
+    year: 1929,
+    pages: 326,
     status: "Read",
   },
   {
-    title: "1984",
-    author: "George Orwell",
-    year: 1949,
-    pages: 328,
+    title: "The Plague",
+    author: "Albert Camus",
+    year: 1947,
+    pages: 308,
     status: "Currently Reading",
   },
   {
@@ -190,17 +190,17 @@ const sampleBooks = [
     status: "Not Read",
   },
   {
-    title: "Moby Dick",
-    author: "Herman Melville",
-    year: 1851,
-    pages: 635,
+    title: "The Catcher in the Rye",
+    author: "J.D. Salinger",
+    year: 1951,
+    pages: 277,
     status: "Not Read",
   },
   {
-    title: "Pride and Prejudice",
-    author: "Jane Austen",
-    year: 1813,
-    pages: 432,
+    title: "Meditations",
+    author: "Marcus Aurelius",
+    year: 180,
+    pages: 256,
     status: "Read",
   },
 ];
