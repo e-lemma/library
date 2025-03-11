@@ -13,6 +13,16 @@ function Book(title, author, year, pages, readStatus) {
   this.status = readStatus;
 }
 
+Book.prototype.toggleStatus = function () {
+  const statusMapping = {
+    "Not Read": "Currently Reading",
+    "Currently Reading": "Read",
+    Read: "Not Read",
+  };
+
+  this.status = statusMapping[this.status];
+};
+
 function addBookToLibrary(bookData, library) {
   library.push(
     new Book(
@@ -43,7 +53,6 @@ function clearTable() {
   const tbody = document.querySelector("table tbody");
   if (tbody) {
     tbody.innerHTML = "";
-    console.log("cleared table");
   }
 }
 
@@ -77,6 +86,7 @@ function displayBook(bookData, tableElement) {
   cell.textContent = bookData.status;
   addStatusColor(cell, bookData.status);
 
+  addStatusToggleButton(cell, bookData.id);
   addRemoveButton(row, bookData.id);
 }
 
@@ -93,6 +103,25 @@ function setupRemoveButton(button) {
   button.addEventListener("click", () => {
     removeBookFromLibrary(button.dataset.bookId);
     displayLibrary(myLibrary);
+  });
+}
+
+function addStatusToggleButton(statusCellElement, bookId) {
+  const toggleButton = document.createElement("button");
+  toggleButton.classList.add("status-toggle-button");
+  toggleButton.dataset.bookId = bookId;
+  setupStatusToggleButton(toggleButton);
+  statusCellElement.appendChild(toggleButton);
+}
+
+function setupStatusToggleButton(button) {
+  button.addEventListener("click", () => {
+    for (let book of myLibrary) {
+      if (book.id === button.dataset.bookId) {
+        book.toggleStatus();
+        displayLibrary(myLibrary);
+      }
+    }
   });
 }
 
