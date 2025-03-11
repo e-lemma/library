@@ -1,4 +1,4 @@
-const myLibrary = [];
+let myLibrary = [];
 
 function generateID() {
   return crypto.randomUUID();
@@ -25,6 +25,10 @@ function addBookToLibrary(bookData, library) {
   );
 }
 
+function removeBookFromLibrary(bookId) {
+  myLibrary = myLibrary.filter((book) => book.id !== bookId);
+}
+
 function addStatusColor(statusCell, status) {
   if (status === "Not Read") {
     statusCell.classList.add("not-read");
@@ -49,27 +53,47 @@ function displayLibrary(library) {
   clearTable();
 
   for (let book of library) {
-    const newRow = tableRef.insertRow();
-
-    let newCell;
-
-    // Add book data
-    newCell = newRow.insertCell();
-    newCell.textContent = book.title;
-
-    newCell = newRow.insertCell();
-    newCell.textContent = book.author;
-
-    newCell = newRow.insertCell();
-    newCell.textContent = book.year;
-
-    newCell = newRow.insertCell();
-    newCell.textContent = book.pages;
-
-    newCell = newRow.insertCell();
-    newCell.textContent = book.status;
-    addStatusColor(newCell, book.status);
+    displayBook(book, tableRef);
   }
+}
+
+function displayBook(bookData, tableElement) {
+  const row = tableElement.insertRow();
+  let cell;
+
+  cell = row.insertCell();
+  cell.textContent = bookData.title;
+
+  cell = row.insertCell();
+  cell.textContent = bookData.author;
+
+  cell = row.insertCell();
+  cell.textContent = bookData.year;
+
+  cell = row.insertCell();
+  cell.textContent = bookData.pages;
+
+  cell = row.insertCell();
+  cell.textContent = bookData.status;
+  addStatusColor(cell, bookData.status);
+
+  addRemoveButton(row, bookData.id);
+}
+
+function addRemoveButton(rowElement, bookId) {
+  const removeButton = document.createElement("button");
+  removeButton.textContent = "×";
+  removeButton.classList.add("remove-button");
+  removeButton.dataset.bookId = bookId;
+  setupRemoveButton(removeButton);
+  rowElement.appendChild(removeButton);
+}
+
+function setupRemoveButton(button) {
+  button.addEventListener("click", () => {
+    removeBookFromLibrary(button.dataset.bookId);
+    displayLibrary(myLibrary);
+  });
 }
 
 function setupAddBookButton() {

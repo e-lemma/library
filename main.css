@@ -96,16 +96,20 @@ header {
 .remove-button {
   position: absolute;
   top: 10px;
-  right: 5px;
+  right: 10px;
   width: 20px;
   height: 20px;
   font-size: 12px;
   line-height: 1;
+  background-color: #f4433617;
+  color: rgba(255, 255, 255, 0.281);
+  border: none;
+  cursor: pointer;
+}
+
+.remove-button:hover {
   background-color: #f44336;
   color: white;
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
 }
 
 .read::before {
