@@ -23,7 +23,6 @@ function addBookToLibrary(bookData, library) {
       bookData.status
     )
   );
-  library.push(newBook);
 }
 
 function addStatusColor(statusCell, status) {
