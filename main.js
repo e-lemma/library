@@ -26,7 +26,7 @@ function addBookToLibrary(bookData, library) {
 }
 
 function addStatusColor(statusCell, status) {
-  if (status === "Not read") {
+  if (status === "Not Read") {
     statusCell.classList.add("not-read");
   } else if (status === "Read") {
     statusCell.classList.add("read");
@@ -134,14 +134,14 @@ const sampleBooks = [
     author: "F. Scott Fitzgerald",
     year: 1925,
     pages: 180,
-    status: "Not read",
+    status: "Not Read",
   },
   {
     title: "Moby Dick",
     author: "Herman Melville",
     year: 1851,
     pages: 635,
-    status: "Not read",
+    status: "Not Read",
   },
   {
     title: "Pride and Prejudice",
