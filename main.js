@@ -114,8 +114,6 @@ class Row {
     }
   }
 
-  displayBook() {}
-
   addRemoveButton(bookId) {
     const removeButton = document.createElement("button");
     removeButton.textContent = "×";
